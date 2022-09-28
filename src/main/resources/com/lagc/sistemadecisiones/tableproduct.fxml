@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lagc.sistemadecisiones.TableProductController">
+    <TableView fx:id="tablaProductos" minHeight="265.0" prefHeight="265.0"></TableView>
+    <HBox alignment="CENTER" spacing="20.0">
+        <VBox spacing="5.0" alignment="TOP_LEFT">
+            <Label text="Seleccione Productos"> </Label>
+            <CheckBox fx:id="checkBoxProcesador" text="Procesador"></CheckBox>
+            <CheckBox fx:id="checkBoxRam" text="Memoria RAM"></CheckBox>
+            <CheckBox fx:id="checkBoxTarjetaBase" text="Tarjeta base"></CheckBox>
+            <CheckBox fx:id="checkBoxDiscoDuro" text="Disco duro"></CheckBox>
+            <CheckBox fx:id="checkBoxFuentePoder" text="Fuente de poder"></CheckBox>
+            <CheckBox fx:id="checkBoxTarjetaVideo" text="Tarjeta de video"></CheckBox>
+        </VBox>
+        <VBox spacing="5.0" alignment="TOP_LEFT">
+            <Label text="Tipo de informacion"> </Label>
+            <CheckBox fx:id="checkBoxMayorCosto" text="Mayor costo"></CheckBox>
+            <CheckBox fx:id="checkBoxMenorCosto" text="Menor costo"></CheckBox>
+            <CheckBox fx:id="checkBoxMayorCostoTienda" text="Mayor costo por tienda"></CheckBox>
+            <CheckBox fx:id="checkBoxMenorCostoTienda" text="Menor costo por tienda"></CheckBox>
+            <CheckBox fx:id="checkBoxProductosEspecificos" text="Productos especificos"></CheckBox>
+        </VBox>
+        <VBox spacing="5.0" alignment="TOP_CENTER">
+            <Label text="Productos especificos"></Label>
+            <HBox spacing="20.0" alignment="TOP_RIGHT">
+                <Label text="Procesador:"></Label>
+                <ComboBox fx:id="comboProcesador" minWidth="250.0" prefWidth="250.0"></ComboBox>
+            </HBox>
+            <HBox spacing="20.0" alignment="TOP_RIGHT">
+                <Label text="Memoria RAM:"></Label>
+                <ComboBox fx:id="comboRam" minWidth="250.0" prefWidth="250.0"></ComboBox>
+            </HBox>
+            <HBox spacing="20.0" alignment="TOP_RIGHT">
+                <Label text="Tarjeta base:"></Label>
+                <ComboBox fx:id="comboTarjetaBase" minWidth="250.0" prefWidth="250.0"></ComboBox>
+            </HBox>
+            <HBox spacing="20.0" alignment="TOP_RIGHT">
+                <Label text="Disco duro:"></Label>
+                <ComboBox fx:id="comboDiscoDuro" minWidth="250.0" prefWidth="250.0"></ComboBox>
+            </HBox>
+            <HBox spacing="20.0" alignment="TOP_RIGHT">
+                <Label text="Fuente de poder:"></Label>
+                <ComboBox fx:id="comboFuentePoder" minWidth="250.0" prefWidth="250.0"></ComboBox>
+            </HBox>
+            <HBox spacing="20.0" alignment="TOP_RIGHT">
+                <Label text="Tarjeta de video:"></Label>
+                <ComboBox fx:id="comboTarjetaVideo" minWidth="250.0" prefWidth="250.0"></ComboBox>
+            </HBox>
+        </VBox>
+        <VBox spacing="5.0" alignment="CENTER">
+            <Button
+                    text="Generar"
+                    minWidth="89.0"
+                    prefWidth="89.0"
+                    minHeight="60.0"
+                    prefHeight="60.0"
+                    onAction="#generarActionHandler"
+            >
+            </Button>
+        </VBox>
+    </HBox>
+</VBox>

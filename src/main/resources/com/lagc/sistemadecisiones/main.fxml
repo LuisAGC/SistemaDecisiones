@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<TabPane fx:id="root" fx:controller="com.lagc.sistemadecisiones.SistemaDecisionesController" xmlns:fx="http://javafx.com/fxml">
+    <tabs>
+        <Tab text="Lista de productos">
+            <content>
+                <fx:include fx:id="tableProduct" source="tableproduct.fxml"></fx:include>
+            </content>
+        </Tab>
+        <Tab text="Agregar producto">
+            <content>
+                <fx:include fx:id="addProduct" source="addproduct.fxml"></fx:include>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
