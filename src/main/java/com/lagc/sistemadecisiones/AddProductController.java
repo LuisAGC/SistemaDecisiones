@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.StageStyle;
+import org.controlsfx.control.Notifications;
 
 import java.util.Optional;
 
@@ -66,28 +67,25 @@ public class AddProductController {
         String tienda = textTienda.getText().trim();
 
         if(name == null || tipoProducto == null || tienda == null){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initStyle(StageStyle.UTILITY);
-            alert.setTitle("Valor vacio!");
-            alert.setContentText("Uno de los campos esta vacio o no ha seleccionado algun tipo de producto");
-            alert.showAndWait();
+            Notifications.create()
+                    .title("Valor vacio!")
+                    .text("Uno de los campos esta vacio o no ha seleccionado algun tipo de producto!")
+                    .showWarning();
         }
         else {
             Producto producto = new Producto(tipoProducto, name, precio, tienda);
             Optional<Producto> productoOptional = servicioProductos.agregarProducto(producto);
             if (!productoOptional.isPresent()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.initStyle(StageStyle.UTILITY);
-                alert.setTitle("Error al guardar nuevo producto!");
-                alert.setContentText("Ocurrio un error al tratar de guardar el producto");
-                alert.showAndWait();
+                Notifications.create()
+                        .title("Error!")
+                        .text("Ocurrio un error al tratar de guardar el producto!")
+                        .showError();
             }
             else{
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.initStyle(StageStyle.UTILITY);
-                alert.setTitle("Producto guardado!");
-                alert.setContentText("El producto fue guardado exitosamente");
-                alert.showAndWait();
+                Notifications.create()
+                        .title("Producto guardado!")
+                        .text("El producto fue guardado exitosamente!")
+                        .showConfirm();
             }
         }
 

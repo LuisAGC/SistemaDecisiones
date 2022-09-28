@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.StageStyle;
+import org.controlsfx.control.Notifications;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -105,8 +106,12 @@ public class TableProductController {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.initStyle(StageStyle.UTILITY);
             alert.setTitle("Error!");
-            alert.setContentText("Ocurrio un error al tratar de leer la base de datos \"productos.txt\"");
+            alert.setContentText("Ocurrio un error al tratar de leer la base de datos \"productos.db\"");
             alert.showAndWait();
+            Notifications.create()
+                    .title("Error")
+                    .text("Ocurrio un error al tratar de leer la base de datos \"productos.db\"")
+                    .showError();
         }
     }
 
@@ -217,18 +222,16 @@ public class TableProductController {
                 printLowestPricesBySpecificProductName(output, productos);
             }
             output.flush();
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.initStyle(StageStyle.UTILITY);
-            alert.setTitle("Archivo generado!");
-            alert.setContentText("El archivo de texto \"resultado.txt\" fue generado correctamente");
-            alert.showAndWait();
+            Notifications.create()
+                    .title("Archivo generado!")
+                    .text("El archivo de texto \"resultado.txt\" fue generado correctamente")
+                    .showInformation();
         }
         catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.initStyle(StageStyle.UTILITY);
-            alert.setTitle("Error!");
-            alert.setContentText("Ocurrio un error al tratar de escribir el archivo resultado.txt");
-            alert.showAndWait();
+            Notifications.create()
+                    .title("Error!")
+                    .text("Ocurrio un error al tratar de escribir el archivo resultado.txt")
+                    .showError();
         }
     }
 

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -27,6 +28,7 @@ public class SistemaDecisiones extends Application {
         fxmlLoader.setLocation(getClass().getResource("/com/lagc/sistemadecisiones/main.fxml"));
         Parent parent = fxmlLoader.load();
         Scene scene = new Scene(parent, 835, 515);
+        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         stage.setTitle("Sistema de decisiones");
         stage.setScene(scene);
         stage.show();
